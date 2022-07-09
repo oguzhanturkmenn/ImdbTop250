@@ -25,7 +25,6 @@
         <argument
             android:name="filmID"
             app:argType="integer"
-            android:defaultValue="0"
              />
 
     </fragment>

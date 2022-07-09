@@ -25,8 +25,7 @@ class FilmAdapter(val list : ArrayList<Item>)  : RecyclerView.Adapter<FilmAdapte
  override fun itemClicked(view: View) {
      val uuid = view.itemID.text.toString().toInt()
 
-     val action = FilmListFragmentDirections.actionFilmListFragmentToFilmDetailsFragment()
-     //action.actionId = uuid
+     val action = FilmListFragmentDirections.actionFilmListFragmentToFilmDetailsFragment(uuid)
      Navigation.findNavController(view).navigate(action)
 
 
