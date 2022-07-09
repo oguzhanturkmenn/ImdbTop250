@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/filmListFragment">
+
+    <fragment
+        android:id="@+id/filmListFragment"
+        android:name="com.oguzhanturkmen.imdbtop250.views.FilmListFragment"
+        android:label="fragment_film_list"
+        tools:layout="@layout/fragment_film_list" >
+        <action
+            android:id="@+id/action_filmListFragment_to_filmDetailsFragment"
+            app:destination="@id/filmDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmDetailsFragment"
+        android:name="com.oguzhanturkmen.imdbtop250.views.FilmDetailsFragment"
+        android:label="fragment_film_details"
+        tools:layout="@layout/fragment_film_details" >
+        <action
+            android:id="@+id/action_filmDetailsFragment_to_filmListFragment"
+            app:destination="@id/filmListFragment" />
+        <argument
+            android:name="filmID"
+            app:argType="integer"
+            android:defaultValue="0"
+             />
+
+    </fragment>
+</navigation>
