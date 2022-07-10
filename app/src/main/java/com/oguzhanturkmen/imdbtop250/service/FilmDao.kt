@@ -21,7 +21,7 @@ interface FilmDao {
     @Query("SELECT * FROM Item")
     suspend fun getAllFilms() : List<Item>
 
-    @Query("SELECT * FROM Item WHERE id = :filmId")
+    @Query("SELECT * FROM Item WHERE uuid = :filmId")
     suspend fun getFilm(filmId : Int) : Item
 
     @Query("DELETE FROM Item")

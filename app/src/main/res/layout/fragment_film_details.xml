@@ -47,36 +47,33 @@
 
                 <TextView
                     android:id="@+id/TextViewFilmDetailTitle"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="30dp"
-                    android:text="@{item.title}"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:padding="15dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@{item.title}"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/textViewFilmDetailFavorite"
+                    app:layout_constraintEnd_toEndOf="@+id/textViewFilmDetailFavorite"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="RtlCompat" />
 
                 <TextView
                     android:id="@+id/textViewFilmDetailRank"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="30dp"
-                    android:text="@{item.rank}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="30dp"
                     android:gravity="center"
+                    android:text="@{item.rank}"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/TextViewFilmDetailTitle"
                     app:layout_constraintTop_toBottomOf="@+id/TextViewFilmDetailTitle"
                     tools:ignore="RtlCompat" />
 
@@ -84,12 +81,25 @@
                     android:id="@+id/textViewFilmDetailFavorite"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    app:srcCompat="@drawable/unfavorite_button"
+                    android:layout_marginEnd="18dp"
                     android:favoriteImage="@{item.book_favorite}"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="18dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/unfavorite_button" />
+
+                <RatingBar
+                    android:id="@+id/movieRatingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="10"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:stepSize="0.1"
+                    app:layout_constraintStart_toEndOf="@+id/textViewFilmDetailRank"
+                    app:layout_constraintTop_toBottomOf="@+id/TextViewFilmDetailTitle" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

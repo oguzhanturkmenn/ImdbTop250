@@ -10,6 +10,8 @@
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/fragment_blank.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/fragment_film_details.xml" value="0.2" />
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/fragment_film_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/film_row.xml" value="0.29268798828125003" />
+        <entry key="app/src/main/res/layout/fragment_film_details.xml" value="0.22562317142978286" />
       </map>
     </option>
   </component>

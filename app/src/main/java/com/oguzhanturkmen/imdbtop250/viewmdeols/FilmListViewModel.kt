@@ -91,7 +91,7 @@ class FilmListViewModel(application: Application) : BaseViewModel(application) {
             //amaç ise modelimin içinde de bu idlere erişebilim böylece bu idleri kullanabilim istediğim zaman
             while (i < filmsList.size){
                 filmsList[i].uuid = uuidList [i].toInt()
-                i = i + 1
+                i += 1
             }
             showFilms(filmsList)
 

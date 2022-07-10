@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.oguzhanturkmen.imdbtop250.R
@@ -30,7 +32,7 @@ class FilmDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         dataBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_film_details,container,false)
         return dataBinding.root
@@ -40,7 +42,6 @@ class FilmDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         arguments?.let {
             filmId = FilmDetailsFragmentArgs.fromBundle(it).filmID
         }
@@ -49,14 +50,15 @@ class FilmDetailsFragment : Fragment() {
         observeLiveData()
     }
 
-    fun observeLiveData(){
+    private fun observeLiveData(){
         viewModel.FilmLiveData.observe(viewLifecycleOwner, Observer { Film ->
             Film?.let {Film ->
                 dataBinding.item = Film
-
-
-                imageViewFilmRowFavorite.setOnClickListener {
-
+                movieRatingBar.rating = Film.imDbRating.toFloat()
+                movieRatingBar.isEnabled = false
+                (activity as AppCompatActivity).supportActionBar?.title = Film.title
+                    textViewFilmDetailFavorite.setOnClickListener {
+                    favoriteImage(Film.book_favorite != true, Film.uuid)
                     if (Film.book_favorite == true){
                         favoriteImage(false,Film.uuid)
                     }else{
