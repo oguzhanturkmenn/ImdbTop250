@@ -39,6 +39,7 @@ class FilmListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.app_name)
         viewModel = ViewModelProvider(this).get(FilmListViewModel::class.java)
+
         viewModel.refreshData()
 
         recyclerView.layoutManager = LinearLayoutManager(context)

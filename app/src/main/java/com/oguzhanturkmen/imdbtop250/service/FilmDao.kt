@@ -27,7 +27,7 @@ interface FilmDao {
     @Query("DELETE FROM Item")
     suspend fun deleteAllFilms()
 
-    @Query("UPDATE Item SET book_favorite=:value WHERE uuid = :bookID")
-    suspend fun updateFilmFavorite(value:Boolean, bookID: Int)
+    @Query("UPDATE Item SET book_favorite=:value WHERE uuid = :filmId")
+    suspend fun updateFilmFavorite(value:Boolean, filmId: Int)
 
 }

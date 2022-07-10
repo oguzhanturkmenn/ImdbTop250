@@ -21,7 +21,6 @@ class FilmDetailsViewModel(application: Application): BaseViewModel(application)
         launch {
             val dao = FilmDatabase(getApplication()).FilmDao()
             dao.updateFilmFavorite(value,uuid)
-            println("SqliteUpdate BookListViewModel : "+uuid)
         }
     }
 }

@@ -22,7 +22,7 @@ class FilmListViewModel(application: Application) : BaseViewModel(application) {
     private val filmApiService = FilmApiService()
     private val disposable = CompositeDisposable()
     private val privateSharedPreferences = PrivateSharedPreferences(getApplication())
-    private var updateTime = 0.1f * 60 * 60 * 1000 * 1000 * 1000L
+    private var updateTime = 10f * 60 * 60 * 1000 * 1000 * 1000L
 
     fun refreshData(){
         val saveTime = privateSharedPreferences.getTime()
