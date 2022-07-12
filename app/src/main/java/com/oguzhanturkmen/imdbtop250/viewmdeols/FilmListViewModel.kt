@@ -22,7 +22,7 @@ class FilmListViewModel(application: Application) : BaseViewModel(application) {
     private val filmApiService = FilmApiService()
     private val disposable = CompositeDisposable()
     private val privateSharedPreferences = PrivateSharedPreferences(getApplication())
-    private var updateTime = 0.00001f * 60 * 60 * 1000 * 1000 * 1000L
+    private var updateTime = 10f * 60 * 60 * 1000 * 1000 * 1000L
 
     fun refreshData(){
         val saveTime = privateSharedPreferences.getTime()
@@ -91,7 +91,7 @@ class FilmListViewModel(application: Application) : BaseViewModel(application) {
             //amaç ise modelimin içinde de bu idlere erişebilim böylece bu idleri kullanabilim istediğim zaman
             while (i < filmsList.size){
                 filmsList[i].uuid = uuidList [i].toInt()
-                i = i + 1
+                i += 1
             }
             showFilms(filmsList)
 

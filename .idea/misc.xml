@@ -6,9 +6,9 @@
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/drawable/favorite_button.xml" value="0.247" />
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/drawable/unfavorite_button.xml" value="0.16" />
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/film_row.xml" value="0.16" />
+        <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/film_row.xml" value="0.264" />
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/fragment_blank.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/fragment_film_details.xml" value="0.2" />
+        <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/fragment_film_details.xml" value="0.264" />
         <entry key="..\:/Users/oguzh/AndroidStudioProjects/ImdbTop250/app/src/main/res/layout/fragment_film_list.xml" value="0.25" />
       </map>
     </option>
