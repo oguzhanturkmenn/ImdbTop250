@@ -49,7 +49,7 @@ class FilmListFragment : Fragment() {
             progressBarLoading.visibility = View.VISIBLE
             tvFilmError.visibility = View.GONE
             recyclerView.visibility = View.GONE
-            viewModel.refreshFromInternet()
+            viewModel.getDataFromSQLite()
             swipeRefreshLayout.isRefreshing = false
         }
 

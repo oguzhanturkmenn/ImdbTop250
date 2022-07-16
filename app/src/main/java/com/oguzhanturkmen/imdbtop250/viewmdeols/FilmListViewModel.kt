@@ -38,12 +38,12 @@ class FilmListViewModel(application: Application) : BaseViewModel(application) {
     fun refreshFromInternet(){
         getDataFromInternet()
     }
-    private fun getDataFromSQLite(){
+    fun getDataFromSQLite(){
         filmLoading.value = true
         launch {
             val FilmList = FilmDatabase(getApplication()).FilmDao().getAllFilms()
             showFilms(FilmList)
-            Toast.makeText(getApplication(),"get Room", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(getApplication(),"get Room", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -56,9 +56,8 @@ class FilmListViewModel(application: Application) : BaseViewModel(application) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<Model>() {
                     override fun onSuccess(t: Model) {
-                        //Başarılı olursa
                         saveFilmsInSQLite(t.items)
-                        Toast.makeText(getApplication(),"Besinleri Internet'ten Aldık", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(getApplication(),"Besinleri Internet'ten Aldık", Toast.LENGTH_LONG).show()
 
                     }
 

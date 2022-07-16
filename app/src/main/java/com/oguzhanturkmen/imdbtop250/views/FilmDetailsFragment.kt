@@ -1,5 +1,7 @@
 package com.oguzhanturkmen.imdbtop250.views
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -48,15 +50,33 @@ class FilmDetailsFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(FilmDetailsViewModel::class.java)
         viewModel.getRoomData(filmId)
         observeLiveData()
+
+        imdbOnClick()
     }
+
+    fun imdbOnClick(){
+        imdbImage.setOnClickListener {
+            goToUrl("https://www.imdb.com/chart/top/")
+        }
+    }
+
+    fun goToUrl(s : String){
+        val Uri = Uri.parse(s)
+        val intent = Intent(Intent.ACTION_VIEW,Uri)
+        startActivity(intent)
+    }
+
 
     private fun observeLiveData(){
         viewModel.FilmLiveData.observe(viewLifecycleOwner, Observer { Film ->
             Film?.let {Film ->
                 dataBinding.item = Film
+
                 movieRatingBar.rating = Film.imDbRating.toFloat()
                 movieRatingBar.isEnabled = false
+
                 (activity as AppCompatActivity).supportActionBar?.title = Film.title
+
                     textViewFilmDetailFavorite.setOnClickListener {
                     favoriteImage(Film.book_favorite != true, Film.uuid)
                     if (Film.book_favorite == true){
